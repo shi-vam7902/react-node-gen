@@ -1,26 +1,32 @@
 const express = require('express')
 const app = express()
-const PORT = 3000
+const PORT = 9090
 const mongoose = require('mongoose')
+
 app.use(express.json())
-app.use(express.urlencoded({extended:true}))
-app.listen(PORT,()=>{
-    console.log("Server Started on 3000");
+app.use(express.urlencoded({ extended: true }))
+
+const studentRoute = require("./routes/studentRoutes")
+app.use("/stud",studentRoute)
+
+app.listen(PORT, () => {
+    console.log("Server Started on 9090");
 })
-mongoose.connect("mongodb://localhost:27017/rylMongoGen",{
-    useNewUrlParser:true,
-    useUnifiedTopology:true,
-    keepAlive:true,
-    socketTimeoutMS:30000,
-},(err)=>{
-    if(err)
-    {
+
+mongoose.connect("mongodb://localhost:27017/rylMongoGen", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    keepAlive: true,
+    socketTimeoutMS: 30000,
+
+}, (err) => {
+    if (err) {
         console.log("Error Connecting db");
     }
-    else
-    {
+    else {
         console.log("DataBase Connection Established");
     }
 
 })
-   
+
+
