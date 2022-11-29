@@ -1,6 +1,8 @@
 const ProductSchema = require("../model/ProductModel")
 exports.addProduct = (req,res)=>{
+ 
     const products = new ProductSchema(req.body)
+ 
     products.save((err,data)=>{
         if(err)
         {

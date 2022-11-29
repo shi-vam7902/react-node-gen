@@ -7,7 +7,10 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 const studentRoute = require("./routes/studentRoutes")
-app.use("/stud",studentRoute)
+app.use("/students",studentRoute)
+
+const productRoute = require("./routes/productRoutes")
+app.use("/products",productRoute)
 
 app.listen(PORT, () => {
     console.log("Server Started on 9090");
