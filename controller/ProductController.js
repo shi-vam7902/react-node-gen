@@ -36,3 +36,23 @@ exports.getAllProducts = (req,res)=>{
         }
     })
 }
+exports.deleteProductById = (req,res)=>{
+    const id = req.body.id
+    ProductSchema.findByIdAndDelete(id,(err,data)=>{
+        if(err)
+        {
+            console.log(err);
+            res.status(500).json({
+                message:"product not deleted",
+                error:err
+            })
+        }
+        else
+        {
+            res.status(201).json({
+                message:"product Deleted",
+                data:data
+            })
+        }
+    })
+}
