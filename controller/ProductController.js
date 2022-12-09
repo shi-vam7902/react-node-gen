@@ -37,7 +37,8 @@ exports.getAllProducts = (req,res)=>{
     })
 }
 exports.deleteProductById = (req,res)=>{
-    const id = req.body.id
+    var id = req.params.id
+    console.log(id);
     ProductSchema.findByIdAndDelete(id,(err,data)=>{
         if(err)
         {

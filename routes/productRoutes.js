@@ -4,5 +4,5 @@ const router = express.Router()
 
 router.post("/prod",ProductController.addProduct)
 router.get("/prod",ProductController.getAllProducts)
-router.delete("/prod",ProductController.deleteProductById)
+router.delete("/prod/:id",ProductController.deleteProductById)
 module.exports = router
