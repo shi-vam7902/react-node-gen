@@ -12,6 +12,12 @@ app.use("/students",studentRoute)
 const productRoute = require("./routes/productRoutes")
 app.use("/products",productRoute)
 
+const departmentRoutes = require('./routes/DepartmentRoutes')
+app.use("/departments",departmentRoutes)
+
+const employeeRoutes = require("./routes/EmployeeRoutes")
+app.use("/employees",employeeRoutes)
+
 app.listen(PORT, () => {
     console.log("Server Started on 9090");
 })
