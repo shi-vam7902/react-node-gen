@@ -5,9 +5,9 @@ const EmployeeSchema = new Schema({
         type:String,
         required : true
     },
-    departments:{
+    department:[{
         type:Schema.Types.ObjectId,
         ref:'departments'
-    }
+    }]
 })
 module.exports = mongoose.model('employees',EmployeeSchema)

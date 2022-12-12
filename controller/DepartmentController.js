@@ -10,13 +10,14 @@ exports.addDept = (req, res) => {
             })
         }
         else {
-            res.status(200).json({
+            res.status(201).json({
                 message: "Dept Added",
                 data: data
             })
         }
     })
 }
+
 exports.getAllDept = (req,res)=>{
 
     DepartmentSchema.find((err,data)=>

@@ -7,16 +7,16 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 const studentRoute = require("./routes/studentRoutes")
-app.use("/students",studentRoute)
+app.use("/students", studentRoute)
 
 const productRoute = require("./routes/productRoutes")
-app.use("/products",productRoute)
+app.use("/products", productRoute)
 
 const departmentRoutes = require('./routes/DepartmentRoutes')
-app.use("/departments",departmentRoutes)
+app.use("/departments", departmentRoutes)
 
 const employeeRoutes = require("./routes/EmployeeRoutes")
-app.use("/employees",employeeRoutes)
+app.use("/employees", employeeRoutes)
 
 app.listen(PORT, () => {
     console.log("Server Started on 9090");
