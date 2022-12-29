@@ -1,9 +1,11 @@
 const express  = require("express")
-const StudentController = require("../controller/StudentController")
-const router = express.Router();
+const StudentController = require("../controller/StudentController");
+const StudentValidationUtil = require("../util/StudentSchemavalidationUtil");
+const validate = require('../middleware/ZodMiddleWare')
 
-router.post("/studs",StudentController.createStudent)
-console.log("in router link called");
+const router = express.Router();
+router.post("/studs",validate(StudentValidationUtil),StudentController.createStudent);
+// console.log("in router link called");
 router.get("/studs",StudentController.getAllStudents)
 router.delete('/studs/:id',StudentController.deleteById)
 router.put("/studs/:id",StudentController.updateStud)

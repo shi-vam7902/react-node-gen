@@ -1,7 +1,6 @@
 const StudentSchema = require("../model/StudentModel")
 exports.createStudent = (req, res) => {
-
-
+    
     console.log("....", req.body)
 
     const students = new StudentSchema(req.body)
