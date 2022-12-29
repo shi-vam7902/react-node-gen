@@ -14,6 +14,9 @@ const studentSchema =  schema(
         sstatus: {
             type: Boolean
         }
+    },
+    {
+        timestamps:true
     }
 )
 

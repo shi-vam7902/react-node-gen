@@ -18,9 +18,17 @@ app.use("/departments", departmentRoutes)
 const employeeRoutes = require("./routes/EmployeeRoutes")
 app.use("/employees", employeeRoutes)
 
+const userRoutes = require("./routes/UserRoutes")
+app.use("/users",userRoutes)
+
+const cartRoutes = require("./routes/CartRoutes")
+app.use("/carts",cartRoutes)
+
+
 app.listen(PORT, () => {
     console.log("Server Started on 9090");
 })
+
 
 mongoose.connect("mongodb://localhost:27017/rylMongoGen", {
     useNewUrlParser: true,
