@@ -24,6 +24,10 @@ app.use("/users",userRoutes)
 const cartRoutes = require("./routes/CartRoutes")
 app.use("/carts",cartRoutes)
 
+const uploadRoutes = require("./routes/UploadRoutes")
+app.use("/uploads",uploadRoutes)
+
+
 
 app.listen(PORT, () => {
     console.log("Server Started on 9090");
