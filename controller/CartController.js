@@ -1,4 +1,4 @@
-const cartSchema = require("../model/cartSchema");
+const cartSchema = require("../model/CartModel");
 exports.createCart = (req, res) => {
   const cart = new cartSchema(req.body);
 
