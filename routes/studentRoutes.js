@@ -10,4 +10,5 @@ router.get("/studs",StudentController.getAllStudents)
 router.delete('/studs/:id',StudentController.deleteById)
 router.put("/studs/:id",StudentController.updateStud)
 router.get("/studs/:id",StudentController.getStudById)
+router.post("/studs/bulk",StudentController.insertBulk)
 module.exports = router;
