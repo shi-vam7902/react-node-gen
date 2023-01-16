@@ -3,5 +3,5 @@ const router = express.Router()
 const playlistController = require('../controller/PlayListController')
 router.post("/list",playlistController.addPlayList)
 router.post("/list/:id",playlistController.removeSongFromPlayList)
-router.post("/addlist/:id",playlistController.AddSongToPlayList)
+router.put("/addlist/:id",playlistController.AddSongToPlayList)
 module.exports = router

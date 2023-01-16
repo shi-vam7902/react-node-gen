@@ -36,9 +36,11 @@ exports.removeSongFromPlayList = (req, res) => {
   );
 };
 exports.AddSongToPlayList = (req, res) => {
+  console.log(req.params.id);
+  console.log(req.body.songid);
   PlayList.findOneAndUpdate(
-    { _id: req.params.id },
-    { $push: { songs: req.body.songid } },
+    { _id: req.params.id },//playlist
+    { $push: { songs: req.body.songid } },//songid
     { new: true },
     (err, data) => {
       if (err) {
