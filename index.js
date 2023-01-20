@@ -38,7 +38,7 @@ app.listen(PORT, () => {
 })
 
 
-mongoose.connect("mongodb://localhost:27017/rylMongoGen", {
+mongoose.connect("mongodb+srv://root:root@cluster0.fsjkio0.mongodb.net/RoyalMongoGen?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     keepAlive: true,
@@ -46,10 +46,11 @@ mongoose.connect("mongodb://localhost:27017/rylMongoGen", {
 
 }, (err) => {
     if (err) {
+        console.log(err);
         console.log("Error Connecting db");
     }
     else {
-        console.log("DataBase Connection Established");
+        console.log(" Cluster Created -> DataBase Connection Established");
     }
 
 })
